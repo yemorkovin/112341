@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+{% block title %}Заголовок главной страницы{% endblock %}
+{% block content %}
+<h1 align="center">Зарегистрированые пользователи</h1>
+{% for us in user %}
+<p>Имя: {{us.name}}</p>
+<p>Возраст: {{us.age}}</p>
+<p>Email: {{us.email}}</p>
+{% if us.poll == 'm' %}
+<p>мужской</p>
+{% else %}
+<p>женский</p>
+{% endif %}
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+{% block title %}Заголовок главной страницы{% endblock %}
+{% block content %}
+<h1 align="center">Это главная страница сайта</h1>
+
+{% for new in news %}
+<div>
+    <h2>{{new.title}}</h2>
+    <p>{{new.text}}</p>
+    <p><img src="{{new.image}}" width="300px"/></p>
+    <p>Категория: {{new.category}}</p>
+    <p>Добавил: {{new.user}}</p>
+</div>
+{% endfor %}
+
+{% endblock %}

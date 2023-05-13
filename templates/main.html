@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <h1 align="center">Шапка сайта</h1>
+    </header>
+    <div class="main">
+        <nav class="main_menu">
+            {% if 'email' in request.session %}
+            <h2>Привет, {{request.session.email}}</h2>
+            <a href="/logout/">Выйти</a>
+            {% endif %}
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/about/">О нас</a></li>
+                <li><a href="/profile/">Профили</a></li>
+                <li><a href="/reg/">Регистрация</a></li>
+                 <li><a href="/auth/">Авторизация</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            {% block content %}
+
+
+            {% endblock %}
+        </div>
+        <div class="clear"></div>
+    </div>
+    <footer>
+        <p align="center">Footer</p>
+    </footer>
+</body>
+</html>

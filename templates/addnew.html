@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% block title %}Заголовок главной страницы{% endblock %}
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <table>
+    <tr>
+      <td>Title:</td><td> {{ form.title }} </td>
+    </tr>
+    <tr>
+      <td>Text:</td><td> {{ form.text }} </td>
+    </tr>
+    <tr>
+      <td>categories:</td><td> {{ form.cat_res }}</td>
+    </tr>
+    <tr>
+      <td>User:</td><td> <input type="email" readonly value="{{user}}" name="user"/> </td>
+    </tr>
+    <tr>
+      <td>image:</td><td> {{ form.image }}</td>
+    </tr>
+    <tr>
+      <td colspan="2"> <input type="submit" value="Добавить новость"></td>
+    </tr>
+  </table>
+</form>
+
+{% endblock %}

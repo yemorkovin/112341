@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+{% block title %}Заголовок главной страницы{% endblock %}
+{% block content %}
+<h1 align="center">Форма регистрации</h1>
+{% if suc == 1 %}
+<h1>Вы успешно зарегистрированы</h1>
+{% else %}
+<form method="post">
+  {% csrf_token %}
+  Name: {{ form.name }} <br />
+  Age: {{ form.age }} <br />
+  Email: {{ form.email }} <br />
+  Poll: {{ form.poll }} <br />
+  Password: {{ form.password }} <br />
+  <input type="submit" value="Регистрация">
+</form>
+
+{% endif %}
+
+{% endblock %}

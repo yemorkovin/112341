@@ -1,0 +1,25 @@
+body{
+padding: 0;
+margin: 0;
+}
+header, footer{
+width: 900px;
+margin: 10px auto;
+background-color: #eee;
+}
+.main{
+width: 900px;
+margin: 0 auto;
+background-color: #eaeaea;
+}
+.main_menu{
+float: left;
+width: 200px;
+}
+.content{
+width: 700px;
+margin-left: 200px;
+}
+.clear{
+clear: both;
+}
