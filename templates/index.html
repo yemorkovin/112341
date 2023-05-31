@@ -2,15 +2,17 @@
 {% block title %}Заголовок главной страницы{% endblock %}
 {% block content %}
 <h1 align="center">Это главная страница сайта</h1>
-
+<div class="row">
 {% for new in news %}
-<div>
+<div class="item">
     <h2>{{new.title}}</h2>
     <p>{{new.text}}</p>
-    <p><img src="{{new.image}}" width="300px"/></p>
+    <p><img src="{{new.image}}"/></p>
     <p>Категория: {{new.category}}</p>
     <p>Добавил: {{new.user}}</p>
+    <p><a href="viewarticle/{{new.id}}">Подробнее</a> </p>
 </div>
 {% endfor %}
+</div>
 
 {% endblock %}

@@ -23,3 +23,16 @@ margin-left: 200px;
 .clear{
 clear: both;
 }
+.row{
+display: flex;
+width: 100%;
+flex-wrap: wrap;
+}
+.item{
+margin: 10px;
+font-size: 18px;
+}
+.row img{
+width: 200px;
+
+}

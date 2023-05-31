@@ -11,13 +11,13 @@
       <td>Text:</td><td> {{ form.text }} </td>
     </tr>
     <tr>
-      <td>categories:</td><td> {{ form.cat_res }}</td>
+      <td>categories:</td><td> {{ form.category }}</td>
     </tr>
     <tr>
-      <td>User:</td><td> <input type="email" readonly value="{{user}}" name="user"/> </td>
+      <td></td><td> <input type="hidden"  value="{{id}}" name="user"/> </td>
     </tr>
     <tr>
-      <td>image:</td><td> {{ form.image }}</td>
+      <td>image:</td><td> <input type="file" name="img"></td>
     </tr>
     <tr>
       <td colspan="2"> <input type="submit" value="Добавить новость"></td>

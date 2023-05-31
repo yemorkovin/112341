@@ -14,7 +14,8 @@
         <nav class="main_menu">
             {% if 'email' in request.session %}
             <h2>Привет, {{request.session.email}}</h2>
-            <a href="/logout/">Выйти</a>
+            <a href="/logout/">Выйти</a><br />
+            <a href="/addnew/">Добавить новость</a>
             {% endif %}
             <ul>
                 <li><a href="/">Главная</a></li>

@@ -30,6 +30,7 @@ urlpatterns = [
     path('auth/', views.auth, name='auth'),
     path('logout/', views.logout, name='logout'),
     path('addnew/', views.addnew, name='addnew'),
+    path('viewarticle/<int:pk>', views.viewarticle, name='viewarticle'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 #urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

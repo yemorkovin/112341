@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import MenuItem, Users, News
+from .models import MenuItem, Users, News, Categories
 from mySite.forms import Registration, Auth, AddNew
 
 def index(request):
@@ -70,18 +70,33 @@ def logout(request):
 
     return redirect('/')
 
+
 def addnew(request):
     if 'email' in request.session:
         context = {}
         context['user'] = request.session['email']
         if request.method == 'POST':
-            print(request.POST)
+
             form = AddNew(request.POST)
             if form.is_valid():
-                pass
+                addnew = News()
+                addnew.title = request.POST['title']
+                addnew.text = request.POST['text']
+                addnew.category = Categories.objects.filter(id=request.POST['category']).first()
+                addnew.user = Users.objects.filter(email=request.session['email']).first()
+                addnew.image = request.FILES['img']
+                addnew.save()
         else:
+
             form = AddNew
+        login = Users.objects.filter(email=request.session['email']).first()
+        context['login'] = login
         context['form'] = form
         return render(request, 'addnew.html', context=context)
     else:
         return redirect('/')
+
+def viewarticle(request, pk):
+    context = {}
+    context["new"] = News.objects.filter(id=pk).first()
+    return render(request, 'articledetail.html', context=context)
